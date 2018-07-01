@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sửa nhà sản xuất</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/stylesheets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script src="/javascripts/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sửa nhà sản xuất</h2>
+ 
+	<form action="/suansx/<%= danhsach.nsxID  %>" method="post">
+    <div class="form-group">
+      <label for="ma">Mã nhà sản xuất:</label>
+      <input type="text" class="form-control" id="ma" name="ma" value="<%= danhsach.nsxID %>" disabled>
+    </div>
+    <div class="form-group">
+      <label for="ten">Tên nhà sản xuất</label>
+      <input type="text" class="form-control" id="ten" name="ten" value="<%= danhsach.nsxName %>">
+    </div>
+    <button type="submit" class="btn btn-success ">Sửa nhà sản xuất</button>
+  </form>
+ 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+    "sanpham" :[
+        {
+            "id":1,
+            "title":"Website fedu.vn",
+            "bigImage":"./images/sp1/1.jpg",
+            "productImage":["./images/sp1/2.jpg","./images/sp1/3.jpg"],
+            "des":"Họ xây dựng giao diện theo đúng yêu cầu thiết kế, tương tác, chuyển động theo đúng ý tưởng sáng tạo đem lại cho giao diện đẹp, trải nghiệm tốt, thể hiện được phong cách của trang website. Để thực hiện tốt các vấn đề trên, đòi hỏi lập trình viên Frontend phải thành thạo các ngôn ngữ chính như: HTML, CSS, JavaSCrip, các thư viện jQuery …., Lập trình viên phải tương tác tốt với các frameword như Bootstrap để đảm bảo nội dung có hiển thị tốt trên các thiết bị di động, trình duyệt ….cải thiện tốc độ trang website. ",
+            "client":"VCoporation",
+            "role":"Coder",
+            "cat":"web_design",
+            "link":"http://fedu.vn",
+            "duongDanSEO":"lap-trinh-website-fedu"
+        },
+        
+        {
+            "id":2,
+            "title":"Thiết kế logo ",
+            "bigImage":"./images/sp2/1.jpg",
+            "productImage":["./images/sp2/2.jpg","./images/sp2/3.jpg"],
+            "des":"Họ xây dựng giao diện theo đúng yêu cầu thiết kế, tương tác, chuyển động theo đúng ý tưởng sáng tạo đem lại cho giao diện đẹp, trải nghiệm tốt, thể hiện được phong cách của trang website. Để thực hiện tốt các vấn đề trên, đòi hỏi lập trình viên Frontend phải thành thạo các ngôn ngữ chính như: HTML, CSS, JavaSCrip, các thư viện jQuery …., Lập trình viên phải tương tác tốt với các frameword như Bootstrap để đảm bảo nội dung có hiển thị tốt trên các thiết bị di động, trình duyệt ….cải thiện tốc độ trang website. ",
+            "client":"VCoporation",
+            "role":"Designer",
+            "cat":"Branding",
+            "link":"http://zing.vn",
+            "duongDanSEO":"thiet-ke-logo-fedu"
+        },
+        {
+            "id":3,
+            "title":"Lập trình Angular js cho backend ",
+            "bigImage":"./images/sp3/1.jpg",
+            "productImage":["./images/sp3/2.jpg","./images/sp3/3.jpg"],
+            "des":"Hơn 95% doanh nghiệp đã có Website cho riêng mình! Còn bạn thì sao? Bạn muốn tự mình thực hiện giao diện Web hoặc tự tạo trang trình bày sản phẩm. Hay bạn muốn tự thiết kế trang Blog cho cá nhân, tự làm trang Web giới thiệu công ty, cửa hàng?            ",
+            "client":"Fedu",
+            "role":"Artist",
+            "cat":"Backend",
+            "link":"http://vnexpress.vn",
+            "duongDanSEO":"lap-trinh-angular-js-cho-backend"
+        },
+        {
+            "id":4,
+            "title":"Thiết kế chức năng cho backend ",
+            "bigImage":"./images/sp5/1.jpg",
+            "productImage":["./images/sp5/2.jpg","./images/sp5/3.jpg"],
+            "des":"xây dựng giao diện theo đúng yêu cầu thiết kế, tương tác, chuyển động theo đúng ý tưởng sáng tạo đem lại cho giao diện đẹp, trải nghiệm tốt, thể hiện được phong cách của trang website. Để thực hiện tốt các vấn đề trên, đòi hỏi lập trình viên Frontend phải thành thạo các ngôn ngữ chính như: HTML, CSS, JavaSCrip, các thư viện jQuery …., Lập trình viên phải tương tác tốt với các frameword như Bootstrap để đảm bảo nội dung có hiển thị tốt trên các thiết bị di động, trình duyệt ….cải thiện tốc độ trang website.",
+            "client":"Microsoft",
+            "role":"Frontend Dev",
+            "cat":"Webdev",
+            "link":"http://microsoft.vn",
+            "duongDanSEO":"thiet-ke-chuc-nang-cho-backend"
+        } 
+
+    ]
+}

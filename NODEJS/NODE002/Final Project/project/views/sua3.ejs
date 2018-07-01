@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sửa sản phẩm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/stylesheets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script src="/javascripts/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sửa sản phẩm</h2>
+					  <div class="row">
+					  	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					  		
+					  	</div>
+					  	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+					  		<form action="/suasp/<%= danhsach.ProID  %>" method="post">
+										<div class="form-group">
+										<label for="ma">Mã sản phẩm:</label>
+										<input type="text" class="form-control" id="ma" name="ma" value="<%= danhsach.ProID %>" disabled>
+									</div>
+									<div class="form-group">
+										<label for="ten">Tên sản phẩm:</label>
+										<input type="text" class="form-control" id="ten" name="ten" value="<%= danhsach.ProName %>">
+									</div>
+									<div class="form-group">
+											<label for="comment">Mô tả:</label>
+											<textarea class="form-control" rows="5" cols="3000" id="comment" name="comment" value="<%= danhsach.ProDec %>"><%= danhsach.ProDec %></textarea>
+										</div>
+									
+									<div class="form-group">
+										<label for="loai">Loại sản phẩm:</label>
+										<select class="form-control" id="loai" name="loai">
+											<% danhsach1.danhsachsv1.forEach(function (motphantu){		%>
+											<%
+											var loaisp="";
+												if(motphantu.CatID === danhsach.CatID){ %>
+													<option selected><%= motphantu.CatID %></option>
+											<%	}else{ %>
+													<option><%= motphantu.CatID %></option>
+											<%	}
+											%>
+											
+											<% }) %>
+										</select>
+										<br>
+									</div>
+									<div class="form-group">
+										<label for="nsx">Nhà sản xuất:</label>
+										<select class="form-control" id="nsx" name="nsx">
+									        <% danhsach2.danhsachsv2.forEach(function (motphantu){		%>
+										
+											<%
+											var loaisp="";
+												if(motphantu.nsxID === danhsach.nsxID){ %>
+													<option selected><%= motphantu.nsxID %></option>
+											<%	}else{ %>
+													<option><%= motphantu.nsxID %></option>
+											<%	}
+											%>
+											<% }) %>
+										</select>
+										<br>
+
+									</div>
+									<div class="form-group">
+										<label for="gia">Giá bán:</label>
+										<input type="textarea" class="form-control" id="gia" name="gia" value="<%= danhsach.ProPrice %>">
+									</div>
+									<div class="form-group">
+										<label for="xuatxu">Xuất xứ:</label>
+										<input type="textarea" class="form-control" id="xuatxu" name="xuatxu" value="<%= danhsach.ProAddr %>">
+									</div>
+                                    <div class="form-group">
+										<label for="NumSale">Số lượng đã bán:</label>
+										<input type="textarea" class="form-control" id="NumSale" name="NumSale" value="<%= danhsach.NumSale %>">
+									</div>
+									<div class="form-group">
+										<label for="NumWatch">Số lượt xem:</label>
+										<input type="textarea" class="form-control" id="NumWatch" name="NumWatch" value="<%= danhsach.NumWatch %>">
+									</div>
+                                    <div class="form-group">
+										<label for="ngayNhap">Ngày nhập(không được thay đổi):</label>
+										<input type="textarea" class="form-control" id="ngayNhap" name="ngayNhap" value="<%= danhsach.ProDateIn %>">
+									</div>
+									<button type="submit" class="btn btn-success">Sửa sản phẩm</button>
+                                    <br/>
+                                    <hr/>
+							</form>
+					  	</div>
+					  	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					  		
+					  	</div>
+ 
+</div>
+
+</body>
+</html>

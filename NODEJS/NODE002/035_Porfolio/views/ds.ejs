@@ -1,0 +1,34 @@
+<% include template/header %> 
+		<!-- content -->
+    <% if(danhsach){ %>
+
+        <h3> Sản phẩm đã xem </h3>
+		<div class="ish-row ish-content ish-portfolio ish-macy">
+ 
+      <% danhsach.forEach(function(id){ %>
+         <% duLieuJson.sanpham.forEach(function(motsanpham){ 
+             if(motsanpham.id == id ){
+             %>
+			<a class="ish-portfolio-item ish--tc13 ish-portfolio-<%= motsanpham.cat %>" href="/<%= motsanpham.duongDanSEO %>.<%= motsanpham.id %>">
+				<div class="ish-portfolio-item__image-container">
+					<img class="ish-portfolio-item__image" src="<%= motsanpham.bigImage %>" alt="business cards">
+				</div>
+				<div class="ish-portfolio-item__desc">
+					<span class="ish-portfolio-item__title"><%= motsanpham.title %></span>
+					<span class="ish-portfolio-item__subtitle"><%= motsanpham.cat %></span>
+				</div>
+			</a>
+         <% }
+             })
+      
+      }) 
+    }
+      %>
+
+ 
+      <!-- main content end -->
+		</div>
+		<!-- content end -->
+
+<% include template/footer %>
+	

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sửa đơn hàng</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/stylesheets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script src="/javascripts/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sửa đơn hàng</h2>
+					  <div class="row">
+					  	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					  		
+					  	</div>
+					  	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+					  		<form action="/suadonhang/<%= danhsach.billID  %>" method="post">
+										<div class="form-group">
+										<label for="ma">Mã đơn hàng:</label>
+										<input type="text" class="form-control" id="ma" name="ma" value="<%= danhsach.billID %>" disabled>
+									</div>
+									<div class="form-group">
+										<label for="ten">Tên khách hàng:</label>
+										<input type="text" class="form-control" id="ten" name="ten" value="<%= danhsach.TenKH %>">
+									</div>
+									<div class="form-group">
+											<label for="diaChi">Địa chỉ khách hàng:</label>
+											<textarea class="form-control" rows="5" cols="3000" id="diaChi" name="diaChi" value="<%= danhsach.Addr %>"><%= danhsach.Addr %></textarea>
+										</div>
+									
+									
+									
+									
+									<div class="form-group">
+										<label for="sdt">Số điện thoại:</label>
+										<input type="textarea" class="form-control" id="sdt" name="sdt" value="<%= danhsach.SDT %>">
+									</div>
+									<div class="form-group">
+										<label for="ngayNhap">Ngày lập:</label>
+                                        <%
+                                        
+                                            var str = danhsach.Date.toString();
+                                            var temp = str.slice(4,15);
+                                            console.log("==========" + temp);
+                                            var date = new Date(temp);
+                                            console.log("==========" + date);
+                                                    var month = date.getMonth()+1;
+                                                    var thang="";
+                                                    if(month <  10){
+                                                            thang = "0" + month.toString();
+                                                    }else{
+                                                        thang = month;
+                                                    }
+                                                    var ngayNhap = date.getFullYear().toString() +"-" + thang +"-"+date.getDate().toString(); 
+                                                    console.log("ngayNhap: " + ngayNhap);
+                                        %>
+										<input type="textarea" class="form-control" id="ngayNhap" name="ngayNhap" value="<%= ngayNhap %>">
+									</div>
+                                    <div class="form-group">
+										<label for="status">Tình trạng:</label>
+										<select class="form-control" id="status" name="status" value="<%= danhsach.Status %>">
+											<%
+                                                if(danhsach.Status === "Đã giao"){ %>
+                                                        <option selected>Đã giao</option>
+                                               <% }else{ %>
+                                                        <option >Đã giao</option>
+                                              <%  }
+                                            %>
+											
+                                            <%
+                                                if(danhsach.Status === "Đang giao"){ %>
+                                                        <option selected>Đang giao</option>
+                                               <% }else{ %>
+                                                        <option >Đang giao</option>
+                                              <%  }
+                                            %>
+
+                                            <%
+                                                if(danhsach.Status === "Chưa giao"){ %>
+                                                        <option selected>Chưa giao</option>
+                                               <% }else{ %>
+                                                        <option >Chưa giao</option>
+                                              <%  }
+                                            %>
+											
+										</select>
+										<br>
+									</div>
+									<button type="submit" class="btn btn-success">Sửa đơn hàng</button>
+                                    <br/>
+                                    <hr/>
+							</form>
+					  	</div>
+					  	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					  		
+					  	</div>
+ 
+</div>
+
+</body>
+</html>

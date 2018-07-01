@@ -1,0 +1,139 @@
+ 
+<% include template/header %>
+
+        <% duLieuJson.sanpham.forEach(function(spchitiet){ %>
+
+        <% if(spchitiet.id == idsanpham){ %>
+        <!-- lead -->
+        <div class="ish-row ish-fullrow ish-lead">
+            <span class="ish-lead__caption ish-icon-up"> <%= spchitiet.title %></span>
+            <div class="ish-lead__image">
+                <img src="<%= spchitiet.bigImage %>" alt="wawererly design">
+            </div>
+            <h1 class="ish-lead__headline">
+				<span class="ish-lead__headline-inner"><%= spchitiet.title %>  </span>
+            </h1>
+        </div>
+
+      
+        <!-- lead end -->
+
+
+
+        <!-- content -->
+        <div class="ish-row ish-content">
+
+            <div class="ish-col-xs-12 ish-col-sm-4 ish-last-xs ish-first-sm ish-content__sidebar">
+
+                <!-- side content -->
+                <p>
+                   <%= spchitiet.des %>
+                </p>
+                 
+
+                <ul class="ish-sidebar-mdata post-meta">
+                    <li class="ish-sidebar-mdata__item">
+                        <strong class="ish-sidebar-mdata__title post-meta-key">Khách hàng</strong>
+                         <%= spchitiet.client %>
+                    </li>
+                    <li class="ish-sidebar-mdata__item">
+                        <strong class="ish-sidebar-mdata__title post-meta-key">Vai trò trong dự án</strong>
+                      <%= spchitiet.role %>
+                    </li>
+                    <li class="ish-sidebar-mdata__item">
+                        <strong class="ish-sidebar-mdata__title post-meta-key">Danh mục</strong>
+                        <a href="#"><%= spchitiet.cat %></a>
+                    </li>
+                    <li class="ish-sidebar-mdata__item">
+                        <strong class="ish-sidebar-mdata__title post-meta-key">Link sản phẩm </strong>
+                        <a href="https://ishyoboy.com" target="_blank"> <%= spchitiet.link %></a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div class="ish-sidebar-share">
+                    <strong class="ish-sidebar-share__desc">Chia sẻ</strong>
+                    <ul class="ish-sidebar-share__list">
+                        <li class="ish-sidebar-share__list-item">
+                            <a href="#" class="ish-sidebar-share__list-link ish-sc-el ish-sc-icon ish-icon-facebook ish--tc3"></a>
+                        </li>
+                        <li class="ish-sidebar-share__list-item">
+                            <a href="#" class="ish-sidebar-share__list-link ish-sc-el ish-sc-icon ish-icon-behance ish--tc3"></a>
+                        </li>
+                        <li class="ish-sidebar-share__list-item">
+                            <a href="#" class="ish-sidebar-share__list-link ish-sc-el ish-sc-icon ish-icon-dribbble ish--tc3"></a>
+                        </li>
+                        <li class="ish-sidebar-share__list-item">
+                            <a href="#" class="ish-sidebar-share__list-link ish-sc-el ish-sc-icon ish-icon-twitter ish--tc3"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr>
+
+                <ul class="ish-prev-next">
+                    <li class="ish-prev-next__item ish-prev-next--left">
+                        <a class="ish-prev-next__link" href="portfolio-detail2.html">Previous</a>
+                        <span class="ish-prev-next__icon ish-icon-left"></span>
+                    </li>
+                    <li class="ish-prev-next__item ish-prev-next--right">
+                        <a class="ish-prev-next__link" href="portfolio-detail2.html">Next</a>
+                        <span class="ish-prev-next__icon ish-icon-right"></span>
+                    </li>
+                </ul>
+                <!-- side content end -->
+
+            </div>
+
+            <div class="ish-col-xs-12 ish-col-sm-7 ish-col-sm-offset-1 ish-content__main">
+
+               
+                <% spchitiet.productImage.forEach(function(motanh){                
+                     %>
+                <a class="ish-image ish-lightbox" href="<%= motanh %>">
+                    <img class="ish-image__image" src="<%= motanh %>" alt="logotype design">
+                 </a>
+                 <% } ) %>
+            </div>
+
+        </div>
+        <!-- content end -->
+   <%
+        } 
+         }) %>
+
+         <hr/>
+            <% if(danhsach){ %>
+
+        <h3> Sản phẩm đã xem </h3>
+		<div class="ish-row ish-content ish-portfolio ish-macy">
+ 
+      <% danhsach.forEach(function(id){ %>
+         <% duLieuJson.sanpham.forEach(function(motsanpham){ 
+             if(motsanpham.id == id ){
+                 if(motsanpham.id != idsanpham){
+             %>
+			<a class="ish-portfolio-item ish--tc13 ish-portfolio-<%= motsanpham.cat %>" href="/<%= motsanpham.duongDanSEO %>.<%= motsanpham.id %>">
+				<div class="ish-portfolio-item__image-container">
+					<img class="ish-portfolio-item__image" src="<%= motsanpham.bigImage %>" alt="business cards">
+				</div>
+				<div class="ish-portfolio-item__desc">
+					<span class="ish-portfolio-item__title"><%= motsanpham.title %></span>
+					<span class="ish-portfolio-item__subtitle"><%= motsanpham.cat %></span>
+				</div>
+			</a>
+         <% 
+                 }
+         }
+             })
+      
+      }) 
+    }
+      %>
+
+ 
+      <!-- main content end -->
+		</div>
+		<!-- content end -->
+<% include template/footer %>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sửa loại sản phẩm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/stylesheets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script src="/javascripts/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sửa loại sản phẩm</h2>
+	<form action="/sualoaisp/<%= danhsach.CatID  %>" method="post">
+    <div class="form-group">
+      <label for="ma">Mã loại sản phẩm:</label>
+      <input type="text" class="form-control" id="ma" name="ma" value="<%= danhsach.CatID %>" disabled>
+    </div>
+    <div class="form-group">
+      <label for="ten">Tên loại sản phẩm:</label>
+      <input type="text" class="form-control" id="ten" name="ten" value="<%= danhsach.CatName %>">
+    </div>
+    <button type="submit" class="btn btn-success ">Sửa loại sản phẩm</button>
+  </form>
+
+</div>
+
+</body>
+</html>
